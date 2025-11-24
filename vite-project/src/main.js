@@ -22,3 +22,33 @@ document.querySelector("#app").innerHTML = `
 `;
 
 setupCounter(document.querySelector("#counter"));
+
+const artworks = [
+  {
+    heading: "Hatune Miku Orginal",
+    image:
+      "https://i.pinimg.com/originals/b7/45/dd/b745dde0ca59f0ffeebee2d9e67af8f7.jpg",
+    alt: "insert majig",
+    description: "aaa",
+  },
+  {
+    heading: "Hatune Miku Sakura",
+    image:
+      "https://i0.wp.com/beneaththetangles.com/wp-content/uploads/2022/03/sakura-miku-hatsune-VOCALOID.jpg?resize=786%2C1024&ssl=1",
+    alt: "insert majig",
+    description: "aaa",
+  },
+  {
+    heading: "Hatune Miku Cinimonroll",
+    image:
+      "https://i.pinimg.com/474x/37/96/e2/3796e2e2e2d116867e555eda310c7f81.jpg?nii=t",
+    alt: "insert majig",
+    description: "aaa",
+  },
+  {
+    heading: "Hatune Miku birdku",
+    image: "insert thing",
+    alt: "insert majig",
+    description: "aaa",
+  },
+];
