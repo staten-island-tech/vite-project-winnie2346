@@ -22,6 +22,7 @@ document.querySelector("#app").innerHTML = `
 `;
 
 setupCounter(document.querySelector("#counter"));
+
 const artworks = [
   {
     title: "Hatune Miku Orginal",
@@ -88,3 +89,8 @@ const artworks = [
     category: "dolia",
   },
 ];
+
+const container = document.querySelector(".img+des");
+artworks.forEach((item) => {
+  container.insertAdjacentHTML("beforeend", ``);
+});
