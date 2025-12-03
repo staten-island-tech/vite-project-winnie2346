@@ -22,7 +22,8 @@ document.querySelector("#app").innerHTML = `
 `;
 
 setupCounter(document.querySelector("#counter"));
-
+const filterbuttons = document.querySelectorAll(`.tab`);
+// use event listeners ^
 const artworks = [
   {
     title: "Hatune Miku Orginal",
