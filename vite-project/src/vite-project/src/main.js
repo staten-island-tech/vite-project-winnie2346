@@ -22,8 +22,7 @@ document.querySelector("#app").innerHTML = `
 `;
 
 setupCounter(document.querySelector("#counter"));
-const filterbuttons = document.querySelectorAll(`.tab`);
-// use event listeners ^
+
 const artworks = [
   {
     title: "Hatune Miku Orginal",
@@ -90,8 +89,9 @@ const artworks = [
     category: "dolia",
   },
 ];
+const filterbuttons = document.querySelectorAll(`.tab`);
 
-const container = document.querySelector(".img+des");
+const container = document.querySelector(".imgdes");
 artworks.forEach((item) => {
   container.insertAdjacentHTML("beforeend", ``);
 });
