@@ -89,9 +89,15 @@ const artworks = [
     category: "dolia",
   },
 ];
-const filterbuttons = document.querySelectorAll(`.tab`);
+const button = document.querySelector(".tab");
+function filter(category) {
+  let images = artworks.filter((el) => el.category === category);
+  return images;
+}
+button.addEventListener("click", (filter) => {});
+button.onclick = (event) => {};
 
-const container = document.querySelector(".imgdes");
-artworks.forEach((item) => {
-  container.insertAdjacentHTML("beforeend", ``);
-});
+// const container = document.querySelector(".imgdes");
+// artworks.forEach((item) => {
+//   container.insertAdjacentHTML("beforeend", ``);
+// });
