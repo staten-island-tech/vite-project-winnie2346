@@ -90,12 +90,21 @@ const artworks = [
   },
 ];
 const button = document.querySelector(".tab");
+
 function filter(category) {
-  let images = artworks.filter((el) => el.category === category);
-  return images;
+  const cards = document.querySelectorAll(".container");
+  cards.forEach((item) => {
+    const
+    if ((el) => el.category === category) {
+      item.style.display = "";
+    } else {
+      item.style.display = "none";
+    }
+  });
 }
-button.addEventListener("click", (filter) => {});
-button.onclick = (event) => {};
+filter("dolia");
+// button.addEventListener("click", (filter) => {});
+// button.onclick = (event) => {};
 
 // const container = document.querySelector(".imgdes");
 // artworks.forEach((item) => {
