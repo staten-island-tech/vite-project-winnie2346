@@ -90,21 +90,16 @@ const artworks = [
   },
 ];
 const button = document.querySelector(".tab");
-
-function filter(category) {
-  const cards = document.querySelectorAll(".container");
-  cards.forEach((item) => {
-    const
-    if ((el) => el.category === category) {
-      item.style.display = "";
-    } else {
-      item.style.display = "none";
-    }
-  });
+function filterbycategory(category) {
+  let items = artworks.filter((el) => el.category === category);
+  return items;
 }
-filter("dolia");
-// button.addEventListener("click", (filter) => {});
-// button.onclick = (event) => {};
+document.querySelector("#bestgirl").addEventListener("click", () => {
+  filterbycategory("dolia");
+});
+document.querySelector("#teal").addEventListener("click", () => {
+  filterbycategory("miku");
+});
 
 // const container = document.querySelector(".imgdes");
 // artworks.forEach((item) => {
