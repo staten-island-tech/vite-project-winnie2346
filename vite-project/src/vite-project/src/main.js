@@ -89,6 +89,7 @@ const artworks = [
     category: "dolia",
   },
 ];
+
 const button = document.querySelector(".tab");
 function filterbycategory(category) {
   let items = artworks.filter((el) => el.category === category);
