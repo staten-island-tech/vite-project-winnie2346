@@ -89,18 +89,26 @@ const artworks = [
     category: "dolia",
   },
 ];
-
-const button = document.querySelector(".tab");
-function filterbycategory(category) {
-  let items = artworks.filter((el) => el.category === category);
-  return items;
-}
-document.querySelector("#bestgirl").addEventListener("click", () => {
-  filterbycategory("dolia");
-});
-document.querySelector("#teal").addEventListener("click", () => {
-  filterbycategory("miku");
-});
+document.querySelector(".btn").addEventListener ("click", function(){
+  if (document.body.classList.contains("light")){
+    document.body.classList.add("dark");
+document.body.classList.remove("light");
+  } else {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+  }
+})
+// const button = document.querySelector(".tab");
+// function filterbycategory(category) {
+//   let items = artworks.filter((el) => el.category === category);
+//   return items;
+// }
+// document.querySelector("#bestgirl").addEventListener("click", () => {
+//   filterbycategory("dolia");
+// });
+// document.querySelector("#teal").addEventListener("click", () => {
+//   filterbycategory("miku");
+// });
 
 // const container = document.querySelector(".imgdes");
 // artworks.forEach((item) => {
