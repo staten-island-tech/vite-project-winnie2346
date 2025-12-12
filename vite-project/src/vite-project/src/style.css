@@ -2,7 +2,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
+
   --whitei: #eceff5de;
   --bnlack: #242424;
 }
@@ -66,19 +66,22 @@ button:focus-visible {
   background-color: var(--primary);
   border: 2px solid var(--secondary);
   margin: 2rem auto;
-  box-shadow: 2px 4px 2px 1px #93a9b8;
+  box-shadow: 3px 5px 3px 2px #93a9b8;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 45%;
   text-align: center;
 }
-.formm{
-text-align: center;
+.formm {
+  text-align: center;
 }
-.muhahaha{
-margin-bottom: 15px;
+.muhahaha {
+  margin-bottom: 15px;
 }
-img{
-border-bottom: 2px solid var(--secondary) ;
+img {
+  border-bottom: 2px solid var(--secondary);
+}
+.container:hover {
+  transform: translateY(-15px);
 }
