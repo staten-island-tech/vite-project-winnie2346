@@ -80,6 +80,7 @@ button:focus-visible {
   margin-bottom: 15px;
 }
 img {
+  width: 100%;
   border-bottom: 2px solid var(--secondary);
 }
 .container:hover {

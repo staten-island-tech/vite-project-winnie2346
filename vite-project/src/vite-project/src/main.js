@@ -92,12 +92,11 @@ const artworks = [
 //  <button class="tab" id="Alls">All</button>
 //       <button class="tab" id="teal">Miku</button>
 //       <button class="tab" id=" bestgirl">Dolia</button>
-const DOMSelectors= {
-button1: document.getElementById("Alls"),
-button2: document.getElementById("teal"),
-button3: document.getElementById("bestgirl"),
+const DOMSelectors = {
+  button1: document.getElementById("Alls"),
+  button2: document.getElementById("teal"),
+  button3: document.getElementById("bestgirl"),
 };
-
 
 document.querySelector(".btn").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
@@ -109,52 +108,33 @@ document.querySelector(".btn").addEventListener("click", function () {
   }
 });
 
+// const Gallery = document.getElementById("imagedes");
+const products = document.getElementsByClassName(".container");
 
-// document.getElementsByClassName(".container").addEventListener("click", function () {
-//     let artsy = {
-//       image: document.getElementsByClassName(".picture").value,
-//       description: document.getElementsByClassName(".description").value,
-//     };
-//     inject(artsy);
-//   });
-// const info= {
-//   image: document.getElementByClassName("picture"),
-//   description: document.getElementByClassName("description"),
-//   imagedes: document.getElementByClassName("imagedes"),
+//  <div class="imagedes">
+//       <div class="container">
+//         <div class="picture"> <img
+//           src="https://i.pinimg.com/originals/b7/45/dd/b745dde0ca59f0ffeebee2d9e67af8f7.jpg"
+//           alt=""
+//         /></div>
+//        <div class="description"> <p >artist: matchach on twt and uh og miku</p></div>
+//       </div>
 
-// };
-// document.querySelector(".formm").addEventListener("submit",
-//   function (e){
-//     e.preventDefault();
-//     let arttt={
-//       image: document.getElementByClassName("picture").value,
-//   description: document.getElementByClassName("description").value,
-//     };
-//     inject(arttt);
-//     clearFields();
-//   });
-// function inject (arttt){
-// info.imagedes.insertAdjacentHTML(
-//   "afterbegin",
-//   `<div class="imagedes">
-//       <img class="picture" src="${arttt.image}"/>
-//        <p class="description">${arttt.description}</p>
-//     </div>`
-// );
-// }
-// const button = document.querySelector(".tab");
-// function filterbycategory(category) {
-//   let items = artworks.filter((el) => el.category === category);
-//   return items;
-// }
-// document.querySelector("#bestgirl").addEventListener("click", () => {
-//   filterbycategory("dolia");
-// });
-// document.querySelector("#teal").addEventListener("click", () => {
-//   filterbycategory("miku");
-// });
+//     </div>
 
-// const container = document.querySelector(".imgdes");
-// artworks.forEach((item) => {
-//   container.insertAdjacentHTML("beforeend", ``);
-// });
+function display(items) {
+  artworks.innerHTML = "";
+  items.forEach((item) => {
+    const cardHTML = `
+      <div class="container">
+        <div class="picture">
+          <img src="${item.image}">
+        </div>
+        <div class="h3"><h3>${item.category}</h3></div>
+      </div>
+    `;
+    productGallery.insertAdjacentHTML("beforeend", cardHTML);
+  });
+}
+
+displayProducts(gallery);
