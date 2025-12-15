@@ -89,15 +89,15 @@ const artworks = [
     category: "dolia",
   },
 ];
-document
-  .getElementsByClassName(".container")
-  .addEventListener("click", function () {
-    let artsy = {
-      image: document.getElementsByClassName(".picture").value,
-      description: document.getElementsByClassName(".description").value,
-    };
-    inject(artsy);
-  });
+//  <button class="tab" id="Alls">All</button>
+//       <button class="tab" id="teal">Miku</button>
+//       <button class="tab" id=" bestgirl">Dolia</button>
+const DOMSelectors= {
+button1: document.getElementById("Alls"),
+button2: document.getElementById("teal"),
+button3: document.getElementById("bestgirl"),
+};
+
 
 document.querySelector(".btn").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
@@ -108,6 +108,40 @@ document.querySelector(".btn").addEventListener("click", function () {
     document.body.classList.remove("dark");
   }
 });
+
+
+// document.getElementsByClassName(".container").addEventListener("click", function () {
+//     let artsy = {
+//       image: document.getElementsByClassName(".picture").value,
+//       description: document.getElementsByClassName(".description").value,
+//     };
+//     inject(artsy);
+//   });
+// const info= {
+//   image: document.getElementByClassName("picture"),
+//   description: document.getElementByClassName("description"),
+//   imagedes: document.getElementByClassName("imagedes"),
+
+// };
+// document.querySelector(".formm").addEventListener("submit",
+//   function (e){
+//     e.preventDefault();
+//     let arttt={
+//       image: document.getElementByClassName("picture").value,
+//   description: document.getElementByClassName("description").value,
+//     };
+//     inject(arttt);
+//     clearFields();
+//   });
+// function inject (arttt){
+// info.imagedes.insertAdjacentHTML(
+//   "afterbegin",
+//   `<div class="imagedes">
+//       <img class="picture" src="${arttt.image}"/>
+//        <p class="description">${arttt.description}</p>
+//     </div>`
+// );
+// }
 // const button = document.querySelector(".tab");
 // function filterbycategory(category) {
 //   let items = artworks.filter((el) => el.category === category);
