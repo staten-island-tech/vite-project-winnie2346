@@ -101,24 +101,15 @@ gallery.insertAdjacentHTML('beforeend', cry) //insert in to gallery (image des d
 //       <button class="tab" id=" bestgirl">Dolia</button>
 function filterbycategory(category) {
   let items = artworks.filter((el) => el.category === category); 
-}
-// const bruh = filterbycategory("good"); 
-// console.log(bruh); 
+  return items;
+};
 
-// function totalPrice(bruh) {
+document.getElementById("bestgirl").addEventListener("click", function (){
+  const dolll = filterbycategory ("dolia");
 
-//   let total = 0; 
-//   bruh.forEach((item) => {
-  
-//     total = total + item.price * item.quantity;
-//   });
-//   return total.toFixed(2); 
-// }
-console.log(totalPrice(bruh));
-
-document.querySelector("bestgirl").addEventListener("click",filterbycategory (dolia));
-document.querySelector("teal")
-document.querySelector("All")
+});
+// document.querySelector("teal")
+// document.querySelector("All")
 
 document.querySelector(".btn").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
