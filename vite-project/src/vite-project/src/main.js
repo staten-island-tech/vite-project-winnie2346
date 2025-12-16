@@ -6,10 +6,10 @@ import { setupCounter } from "./counter.js";
 document.querySelector("#app").innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
+      <img src="${viteLogo}" class="logo"  />
     </a>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
+      <img src="${javascriptLogo}" class="logo vanilla"  logo" />
     </a>
     <h1>Hello Vite!</h1>
     <div class="card">
@@ -24,79 +24,101 @@ document.querySelector("#app").innerHTML = `
 setupCounter(document.querySelector("#counter"));
 
 const artworks = [
-  {
-    title: "Hatune Miku Orginal",
-    image:
-      "https://i.pinimg.com/originals/b7/45/dd/b745dde0ca59f0ffeebee2d9e67af8f7.jpg",
-    alt: "ogku",
-    description: "miku miku miku",
-    category: "miku",
-  },
+
   {
     title: "Hatune Miku Sakura",
-    image:
+    picture:
       "https://i0.wp.com/beneaththetangles.com/wp-content/uploads/2022/03/sakura-miku-hatsune-VOCALOID.jpg?resize=786%2C1024&ssl=1",
-    alt: "skuraku",
+    
     description: "pinku pinku pinku",
     category: "miku",
   },
   {
     title: "Hatune Miku Cinimonroll",
-    image:
+    picture:
       "https://i.pinimg.com/474x/37/96/e2/3796e2e2e2d116867e555eda310c7f81.jpg?nii=t",
-    alt: "rollku",
-    description: "sanrio sanrio sanrio",
+        description: "sanrio sanrio sanrio",
     category: "miku",
   },
   {
     title: "Hatune Miku birdku",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUlmrwOtGIwzms3x5GAqyFkX8NIKiTmlUd1g&s",
-    alt: "birdku",
-    description: "birdku birdku birdku",
+    picture:
+      "https://encrypted-tbn0.gstatic.com/pictures?q=tbn:ANd9GcTUlmrwOtGIwzms3x5GAqyFkX8NIKiTmlUd1g&s",
+        description: "birdku birdku birdku",
     category: "miku",
   },
   {
     title: "HOK no1",
-    image:
+    picture:
       "https://dthezntil550i.cloudfront.net/qz/latest/qz2407251559163930024606430/b99c9cc1-0020-4088-978b-64dbe0c070d0.png",
-    alt: "dolia #1 fan",
+  
     description: "hok character",
     category: "dolia",
   },
   {
     title: "HOK no2",
-    image:
-      "https://cdnb.artstation.com/p/assets/images/images/070/984/595/large/dao-trong-le-doria.jpg?1704182829",
-    alt: "grr grr grr",
+    picture:
+      "https://cdnb.artstation.com/p/assets/pictures/pictures/070/984/595/large/dao-trong-le-doria.jpg?1704182829",
+
     description: "im on a lose streak",
     category: "dolia",
   },
   {
     title: "HOK no3",
-    image:
+    picture:
       "https://i1.sndcdn.com/artworks-GNBzyirpdRUtkKaw-yCXqgQ-t240x240.jpg",
-    alt: "peak",
-    description: "i think i rage quitted the game",
+      description: "i think i rage quitted the game",
     category: "dolia",
   },
   {
     title: "HOK no4",
-    image:
-      "https://images.steamusercontent.com/ugc/2201758194121780179/7B2B7892764DC84774CAFCBD72107B993CADDE09/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
-    alt: "OMG ITS DOLIA",
+    picture:
+      "https://pictures.steamusercontent.com/ugc/2201758194121780179/7B2B7892764DC84774CAFCBD72107B993CADDE09/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
     description: "im still on gold 3 after 2 years ...",
     category: "dolia",
   },
 ];
+
+const gallery = document.getElementById ("imagedes"); //pick it from html
+
+artworks.forEach(item => { //loop through artworks
+  const cry = //create html 
+  ` <div class="container">
+<div class="picture"> <img 
+src="${item.picture}"
+/></div>
+<div class="title"> ${item.title}
+</div>
+<div class="description"> <p>${item.description}</p></div>
+</div>
+`;
+gallery.insertAdjacentHTML('beforeend', cry) //insert in to gallery (image des div)
+});
+ 
+
 //  <button class="tab" id="Alls">All</button>
 //       <button class="tab" id="teal">Miku</button>
 //       <button class="tab" id=" bestgirl">Dolia</button>
-const DOMSelectors = {
-  button1: document.getElementById("Alls"),
-  button2: document.getElementById("teal"),
-  button3: document.getElementById("bestgirl"),
-};
+function filterbycategory(category) {
+  let items = artworks.filter((el) => el.category === category); 
+}
+// const bruh = filterbycategory("good"); 
+// console.log(bruh); 
+
+// function totalPrice(bruh) {
+
+//   let total = 0; 
+//   bruh.forEach((item) => {
+  
+//     total = total + item.price * item.quantity;
+//   });
+//   return total.toFixed(2); 
+// }
+console.log(totalPrice(bruh));
+
+document.querySelector("bestgirl").addEventListener("click",filterbycategory (dolia));
+document.querySelector("teal")
+document.querySelector("All")
 
 document.querySelector(".btn").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
@@ -108,33 +130,3 @@ document.querySelector(".btn").addEventListener("click", function () {
   }
 });
 
-// const Gallery = document.getElementById("imagedes");
-const products = document.getElementsByClassName(".container");
-
-//  <div class="imagedes">
-//       <div class="container">
-//         <div class="picture"> <img
-//           src="https://i.pinimg.com/originals/b7/45/dd/b745dde0ca59f0ffeebee2d9e67af8f7.jpg"
-//           alt=""
-//         /></div>
-//        <div class="description"> <p >artist: matchach on twt and uh og miku</p></div>
-//       </div>
-
-//     </div>
-
-function display(items) {
-  artworks.innerHTML = "";
-  items.forEach((item) => {
-    const cardHTML = `
-      <div class="container">
-        <div class="picture">
-          <img src="${item.image}">
-        </div>
-        <div class="h3"><h3>${item.category}</h3></div>
-      </div>
-    `;
-    productGallery.insertAdjacentHTML("beforeend", cardHTML);
-  });
-}
-
-displayProducts(gallery);

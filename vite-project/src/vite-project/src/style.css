@@ -79,10 +79,12 @@ button:focus-visible {
 .muhahaha {
   margin-bottom: 15px;
 }
-img {
+.picture {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   border-bottom: 2px solid var(--secondary);
 }
 .container:hover {
-  transform: translateY(-15px);
+  transform: scale(1.5);
 }
