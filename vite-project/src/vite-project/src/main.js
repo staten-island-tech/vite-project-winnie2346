@@ -24,12 +24,11 @@ document.querySelector("#app").innerHTML = `
 setupCounter(document.querySelector("#counter"));
 
 const artworks = [
-
   {
     title: "Hatune Miku Sakura",
     picture:
       "https://i0.wp.com/beneaththetangles.com/wp-content/uploads/2022/03/sakura-miku-hatsune-VOCALOID.jpg?resize=786%2C1024&ssl=1",
-    
+
     description: "pinku pinku pinku",
     category: "miku",
   },
@@ -37,21 +36,21 @@ const artworks = [
     title: "Hatune Miku Cinimonroll",
     picture:
       "https://i.pinimg.com/474x/37/96/e2/3796e2e2e2d116867e555eda310c7f81.jpg?nii=t",
-        description: "sanrio sanrio sanrio",
+    description: "sanrio sanrio sanrio",
     category: "miku",
   },
   {
     title: "Hatune Miku birdku",
     picture:
       "https://encrypted-tbn0.gstatic.com/pictures?q=tbn:ANd9GcTUlmrwOtGIwzms3x5GAqyFkX8NIKiTmlUd1g&s",
-        description: "birdku birdku birdku",
+    description: "birdku birdku birdku",
     category: "miku",
   },
   {
     title: "HOK no1",
     picture:
       "https://dthezntil550i.cloudfront.net/qz/latest/qz2407251559163930024606430/b99c9cc1-0020-4088-978b-64dbe0c070d0.png",
-  
+
     description: "hok character",
     category: "dolia",
   },
@@ -67,7 +66,7 @@ const artworks = [
     title: "HOK no3",
     picture:
       "https://i1.sndcdn.com/artworks-GNBzyirpdRUtkKaw-yCXqgQ-t240x240.jpg",
-      description: "i think i rage quitted the game",
+    description: "i think i rage quitted the game",
     category: "dolia",
   },
   {
@@ -79,11 +78,13 @@ const artworks = [
   },
 ];
 
-const gallery = document.getElementById ("imagedes"); //pick it from html
+const gallery = document.getElementById("imagedes"); //pick it from html
 
-artworks.forEach(item => { //loop through artworks
-  const cry = //create html 
-  ` <div class="container">
+artworks.forEach((item) => {
+  //loop through artworks
+  const cry =
+    //create html
+    ` <div class="container">
 <div class="picture"> <img 
 src="${item.picture}"
 /></div>
@@ -92,9 +93,8 @@ src="${item.picture}"
 <div class="description"> <p>${item.description}</p></div>
 </div>
 `;
-gallery.insertAdjacentHTML('beforeend', cry) //insert in to gallery (image des div)
+  gallery.insertAdjacentHTML("beforeend", cry); //insert in to gallery (image des div)
 });
- 
 
 //  <button class="tab" id="Alls">All</button>
 //       <button class="tab" id="teal">Miku</button>
@@ -107,12 +107,12 @@ const filterButtons = {
 };
 const cards = document.querySelectorAll(".container");
 Object.values(filterButtons).forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    const selectedCategory = event.target.textContent.toLowerCase();//take text of clicked element and coverts to lowercase so no worries bout capitilization 
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    const selectedCategory = e.target.textContent.toLowerCase(); //take text of clicked element and coverts to lowercase so no worries bout capitilization
     cards.forEach((card) => {
       const cardCategory = card.getAttribute("category");
-      if (selectedCategory==="all" || cardCategory === selectedCategory) {
+      if (selectedCategory === "all" || cardCategory === selectedCategory) {
         card.style.display = "";
       } else {
         card.style.display = "none";
@@ -120,8 +120,6 @@ Object.values(filterButtons).forEach((button) => {
     });
   });
 });
-
-
 
 document.querySelector(".btn").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
@@ -132,5 +130,3 @@ document.querySelector(".btn").addEventListener("click", function () {
     document.body.classList.remove("dark");
   }
 });
-
-
