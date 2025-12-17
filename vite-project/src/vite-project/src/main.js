@@ -99,17 +99,29 @@ gallery.insertAdjacentHTML('beforeend', cry) //insert in to gallery (image des d
 //  <button class="tab" id="Alls">All</button>
 //       <button class="tab" id="teal">Miku</button>
 //       <button class="tab" id=" bestgirl">Dolia</button>
-function filterbycategory(category) {
-  let items = artworks.filter((el) => el.category === category); 
-  return items;
+
+const filterButtons = {
+  all: document.querySelector('[data-category="all"]'),
+  miku: document.querySelector('[data-category="miku"]'),
+  dolia: document.querySelector('[data-category="dolia"]'),
 };
-
-document.getElementById("bestgirl").addEventListener("click", function (){
-  const dolll = filterbycategory ("dolia");
-
+const cards = document.querySelectorAll(".container");
+Object.values(filterButtons).forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    const selectedCategory = event.target.textContent.toLowerCase();//take text of clicked element and coverts to lowercase so no worries bout capitilization 
+    cards.forEach((card) => {
+      const cardCategory = card.getAttribute("category");
+      if (selectedCategory==="all" || cardCategory === selectedCategory) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
 });
-// document.querySelector("teal")
-// document.querySelector("All")
+
+
 
 document.querySelector(".btn").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
@@ -120,4 +132,5 @@ document.querySelector(".btn").addEventListener("click", function () {
     document.body.classList.remove("dark");
   }
 });
+
 
