@@ -108,11 +108,12 @@ const filterButtons = {
 const cards = document.querySelectorAll(".container");
 Object.values(filterButtons).forEach((button) => {
   button.addEventListener("click", (e) => {
+    console.log(e.target.textContent);
     e.preventDefault();
     const selectedCategory = e.target.textContent.toLowerCase(); //take text of clicked element and coverts to lowercase so no worries bout capitilization
     cards.forEach((card) => {
       const cardCategory = card.getAttribute("category");
-      if (selectedCategory === "all" || cardCategory === selectedCategory) {
+      if (selectedCategory === "miku" || cardCategory === selectedCategory) {
         card.style.display = "";
       } else {
         card.style.display = "none";
