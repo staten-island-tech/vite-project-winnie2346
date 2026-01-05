@@ -88,3 +88,9 @@ button:focus-visible {
 .container:hover {
   transform: scale(1.5);
 }
+.randomimage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 2px solid var(--secondary);
+}

@@ -82,9 +82,9 @@ const gallery = document.getElementById("imagedes"); //pick it from html
 
 artworks.forEach((item) => {
   //loop through artworks
-  const cry =
+  const card =
     //create html
-    ` <div class="container">
+    ` <div class="container" data-category="${item.category}">
 <div class="picture"> <img 
 src="${item.picture}"
 /></div>
@@ -93,27 +93,20 @@ src="${item.picture}"
 <div class="description"> <p>${item.description}</p></div>
 </div>
 `;
-  gallery.insertAdjacentHTML("beforeend", cry); //insert in to gallery (image des div)
+  gallery.insertAdjacentHTML("beforeend", card); //insert in to gallery (image des div)
 });
 
-//  <button class="tab" id="Alls">All</button>
-//       <button class="tab" id="teal">Miku</button>
-//       <button class="tab" id=" bestgirl">Dolia</button>
+const buttons = document.querySelectorAll(".tab");
+const cardsuh = document.querySelectorAll(".container");
 
-const filterButtons = {
-  all: document.querySelector('[data-category="all"]'),
-  miku: document.querySelector('[data-category="miku"]'),
-  dolia: document.querySelector('[data-category="dolia"]'),
-};
-const cards = document.querySelectorAll(".container");
-Object.values(filterButtons).forEach((button) => {
-  button.addEventListener("click", (e) => {
-    console.log(e.target.textContent);
-    e.preventDefault();
-    const selectedCategory = e.target.textContent.toLowerCase(); //take text of clicked element and coverts to lowercase so no worries bout capitilization
-    cards.forEach((card) => {
-      const cardCategory = card.getAttribute("category");
-      if (selectedCategory === "miku" || cardCategory === selectedCategory) {
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedCategory = button.dataset.category; //in html, used the data-category=""uh . dataset anything that had data- in html is part of dataset BASIXCALLy when clicked finds the category given in buttons (because button.)
+
+    cardsuh.forEach((card) => {
+      const cardCategory = card.dataset.category; // category in containers
+
+      if (selectedCategory === "all" || cardCategory === selectedCategory) {  //when category clicked equals to category in container (all has to have its own bc no all label in containers)
         card.style.display = "";
       } else {
         card.style.display = "none";
@@ -131,3 +124,36 @@ document.querySelector(".btn").addEventListener("click", function () {
     document.body.classList.remove("dark");
   }
 });
+// const generate = document.querySelector(".click");
+// const greatimage = document.querySelector(".randomimage");
+// function magic() {
+//   let one = Math.floor(Math.random() * 256);
+// }
+// generate.addEventListener("click", magic); 
+//random art generating thing anf uploading
+
+
+artworks.forEach((item) => {
+  const newcard =
+    ` <div class="container" data-category="${item.category}">
+<div class="picture"> <img 
+src="${item.picture}"
+/></div>
+<div class="title"> ${item.title}
+</div>
+<div class="description"> <p>${item.description}</p></div>
+</div>
+`;
+  gallery.insertAdjacentHTML("beforeend", newcard);
+});
+
+const form = document.querySelector (".formm");
+
+form.addEventListener("submit", (event)=>{
+  event.preventDefault();
+const newartist = document.getElementById(".arteest");
+const newimage = document.getElementById(".image");
+const newdes = document.getElementById(".deez");
+
+});
+
