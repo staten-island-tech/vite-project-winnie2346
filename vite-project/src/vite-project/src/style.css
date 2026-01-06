@@ -88,9 +88,13 @@ button:focus-visible {
 .container:hover {
   transform: scale(1.5);
 }
-.randomimage {
+.shewantsbeans {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  border-bottom: 2px solid var(--secondary);
+  height: 30%;
+  width:30%;
+}
+.randomimage{
+  border: 3px solid var(--secondary);
 }
