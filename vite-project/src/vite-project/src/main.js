@@ -124,14 +124,27 @@ document.querySelector(".btn").addEventListener("click", function () {
     document.body.classList.remove("dark");
   }
 });
-// const generate = document.querySelector(".click");
-// const greatimage = document.querySelector(".randomimage");
-// function magic() {
-//   let one = Math.floor(Math.random() * 256);
-// }
-// generate.addEventListener("click", magic); 
-//random art generating thing anf uploading
 
+
+// The length data property of an Array instance represents the number of elements in that array. The value is an unsigned, 32-bit integer that is always numerically greater than the highest index in the array.
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+
+function getRandomInt(min, max) { 
+    if (!Number.isInteger(min) || !Number.isInteger(max) || min > max) { //makesure its a number and an intergetr(whole)
+        throw new Error("Invalid range: min must be <= max and both must be integers."); 
+    }
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+const generate = document.querySelector(".CLICK");
+
+
+function magic() {
+  const greatimage = document.querySelector(".randomimage");
+const numbershaha = getRandomInt (0, artworks.length -1) // index starts at 0 but .length counts items in the arry and we need index. if we didnt subtract one, the last index would comme as undefimed
+greatimage.src = artworks [numbershaha].picture; //.src for the url stuff and . picture bc its called picture in array (thingy ses it as object not image)
+}
+generate.addEventListener("click", magic); 
 
 artworks.forEach((item) => {
   const newcard =
@@ -151,9 +164,10 @@ const form = document.querySelector (".formm");
 
 form.addEventListener("submit", (event)=>{
   event.preventDefault();
-const newartist = document.getElementById(".arteest");
-const newimage = document.getElementById(".image");
-const newdes = document.getElementById(".deez");
+  //.value is the things inside the array after the string (?) ex in artworks picture: ... (...is the value)
+const newartist = document.getElementById("arteest");
+const newimage = document.getElementById("image");
+const newdes = document.getElementById("deez");
 
 });
 
