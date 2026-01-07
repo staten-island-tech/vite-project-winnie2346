@@ -31,6 +31,7 @@ const artworks = [
 
     description: "pinku pinku pinku",
     category: "miku",
+    button:"more",
   },
   {
     title: "Hatune Miku Cinimonroll",
@@ -38,6 +39,7 @@ const artworks = [
       "https://i.pinimg.com/474x/37/96/e2/3796e2e2e2d116867e555eda310c7f81.jpg?nii=t",
     description: "sanrio sanrio sanrio",
     category: "miku",
+     button:"more",
   },
   {
     title: "Hatune Miku birdku",
@@ -45,6 +47,7 @@ const artworks = [
       "https://encrypted-tbn0.gstatic.com/pictures?q=tbn:ANd9GcTUlmrwOtGIwzms3x5GAqyFkX8NIKiTmlUd1g&s",
     description: "birdku birdku birdku",
     category: "miku",
+     button:"more",
   },
   {
     title: "HOK no1",
@@ -53,6 +56,7 @@ const artworks = [
 
     description: "hok character",
     category: "dolia",
+     button:"more",
   },
   {
     title: "HOK no2",
@@ -61,6 +65,7 @@ const artworks = [
 
     description: "im on a lose streak",
     category: "dolia",
+     button:"more",
   },
   {
     title: "HOK no3",
@@ -68,6 +73,7 @@ const artworks = [
       "https://i1.sndcdn.com/artworks-GNBzyirpdRUtkKaw-yCXqgQ-t240x240.jpg",
     description: "i think i rage quitted the game",
     category: "dolia",
+     button:"more",
   },
   {
     title: "HOK no4",
@@ -75,6 +81,7 @@ const artworks = [
       "https://pictures.steamusercontent.com/ugc/2201758194121780179/7B2B7892764DC84774CAFCBD72107B993CADDE09/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
     description: "im still on gold 3 after 2 years ...",
     category: "dolia",
+     button:"more",
   },
 ];
 
@@ -91,6 +98,7 @@ src="${item.picture}"
 <div class="title"> ${item.title}
 </div>
 <div class="description"> <p>${item.description}</p></div>
+<button class="bigger">${item.button}</button>
 </div>
 `;
   gallery.insertAdjacentHTML("beforeend", card); //insert in to gallery (image des div)
@@ -115,6 +123,8 @@ buttons.forEach((button) => {
   });
 });
 
+
+
 document.querySelector(".btn").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
     document.body.classList.add("dark");
@@ -126,6 +136,7 @@ document.querySelector(".btn").addEventListener("click", function () {
 });
 
 
+
 // The length data property of an Array instance represents the number of elements in that array. The value is an unsigned, 32-bit integer that is always numerically greater than the highest index in the array.
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
 
@@ -133,7 +144,7 @@ function getRandomInt(min, max) {
     if (!Number.isInteger(min) || !Number.isInteger(max) || min > max) { //makesure its a number and an intergetr(whole)
         throw new Error("Invalid range: min must be <= max and both must be integers."); 
     }
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min; //math.random gives randome decimal between 0 & 1. multiply by (max - min + 1) to give new range bigger tha 0-1 (  return Math.floor(Math.random() * (max - min + 1)) + min; if my minimun wasnt 0)
 };
 
 const generate = document.querySelector(".CLICK");
@@ -146,28 +157,26 @@ greatimage.src = artworks [numbershaha].picture; //.src for the url stuff and . 
 }
 generate.addEventListener("click", magic); 
 
-artworks.forEach((item) => {
-  const newcard =
-    ` <div class="container" data-category="${item.category}">
-<div class="picture"> <img 
-src="${item.picture}"
+document.getElementById("ihatecoding").addEventListener("submit", function (e) {
+  e.preventDefault(); 
+  let newworks = {
+    title: document.getElementById("tital").value,
+    picture: document.getElementById("image").value,
+    description: document.getElementById("deez").value,
+  };
+  inject(newworks); 
+ document.getElementById("ihatecoding").reset(); //https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset
+});
+function inject(newworks) {
+  gallery.insertAdjacentHTML(
+    "afterbegin",
+    `<div class="container">
+      <div class="picture"> <img 
+src="${newworks.picture}"
 /></div>
-<div class="title"> ${item.title}
+<div class="title"> ${newworks.title}
 </div>
-<div class="description"> <p>${item.description}</p></div>
-</div>
-`;
-  gallery.insertAdjacentHTML("beforeend", newcard);
-});
-
-const form = document.querySelector (".formm");
-
-form.addEventListener("submit", (event)=>{
-  event.preventDefault();
-  //.value is the things inside the array after the string (?) ex in artworks picture: ... (...is the value)
-const newartist = document.getElementById("arteest");
-const newimage = document.getElementById("image");
-const newdes = document.getElementById("deez");
-
-});
-
+<div class="description"> <p>${newworks.description}</p></div>
+    </div>`
+  );
+}
