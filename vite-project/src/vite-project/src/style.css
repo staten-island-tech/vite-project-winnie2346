@@ -14,9 +14,7 @@
   --primary: var(--bnlack);
   --secondary: var(--whitei);
 }
-.container:hover{
-  transform: scale(1.2);
-}
+
 a:hover {
   color: var(--secondary);
 }
@@ -70,7 +68,7 @@ button:focus-visible {
 .container {
   background-color: var(--primary);
   border: 2px solid var(--secondary);
-  margin: 2rem auto;
+  margin: 5rem auto;
   box-shadow: 3px 5px 3px 2px #93a9b8;
   display: flex;
   flex-direction: column;
