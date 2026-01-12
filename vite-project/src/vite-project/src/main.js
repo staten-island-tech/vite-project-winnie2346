@@ -126,10 +126,10 @@ buttons.forEach((button) => {
 const big = document.querySelectorAll(".bigger");
 big.forEach((button) => {
   button.addEventListener("click", () => {
+    
     const container = button.closest(".container");
-    container.style.display= "flex";
-   container.style.width = "800px";
- container.style.height = "800px";
+ container.classList.add("expanded");
+ container.classList.remove("container");
   });
 });
 
