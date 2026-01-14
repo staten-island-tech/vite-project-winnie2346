@@ -61,7 +61,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-.bigbigbig{
+.bigbigbig {
   transform: scale(1.5);
 }
 
@@ -94,9 +94,9 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   height: 30%;
-  width:30%;
+  width: 30%;
 }
-.randomimage{
+.randomimage {
   border: 3px solid var(--secondary);
 }
 .expanded {
@@ -111,7 +111,7 @@ button:focus-visible {
   text-align: center;
 }
 
-#imagedes{
+#imagedes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

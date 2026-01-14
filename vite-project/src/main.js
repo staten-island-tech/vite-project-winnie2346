@@ -107,7 +107,6 @@ src="${item.picture}"
 const buttons = document.querySelectorAll(".tab");
 const cardsuh = document.querySelectorAll(".container");
 
-
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const selectedCategory = button.dataset.category; //in html, used the data-category=""uh . dataset anything that had data- in html is part of dataset BASIXCALLy when clicked finds the category given in buttons (because button.)
@@ -115,7 +114,8 @@ buttons.forEach((button) => {
     cardsuh.forEach((card) => {
       const cardCategory = card.dataset.category; // category in containers
 
-      if (selectedCategory === "all" || cardCategory === selectedCategory) {  //when category clicked equals to category in container (all has to have its own bc no all label in containers)
+      if (selectedCategory === "all" || cardCategory === selectedCategory) {
+        //when category clicked equals to category in container (all has to have its own bc no all label in containers)
         card.style.display = "";
       } else {
         card.style.display = "none";
@@ -126,10 +126,9 @@ buttons.forEach((button) => {
 const big = document.querySelectorAll(".bigger");
 big.forEach((button) => {
   button.addEventListener("click", () => {
-    
     const container = button.closest(".container");
- container.classList.add("expanded");
- container.classList.remove("container");
+    container.classList.add("expanded");
+    container.classList.remove("container");
   });
 });
 
@@ -143,24 +142,24 @@ document.querySelector(".btn").addEventListener("click", function () {
   }
 });
 
-
-
 // The length data property of an Array instance represents the number of elements in that array. The value is an unsigned, 32-bit integer that is always numerically greater than the highest index in the array.
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
 
 function getRandomInt(min, max) {
-  if (!Number.isInteger(min) || !Number.isInteger(max) || min > max) { //makesure its a number and an intergetr(whole)
-    throw new Error("Invalid range: min must be <= max and both must be integers.");
+  if (!Number.isInteger(min) || !Number.isInteger(max) || min > max) {
+    //makesure its a number and an intergetr(whole)
+    throw new Error(
+      "Invalid range: min must be <= max and both must be integers."
+    );
   }
   return Math.floor(Math.random() * (max - min + 1)) + min; //math.random gives randome decimal between 0 & 1. multiply by (max - min + 1) to give new range bigger tha 0-1 (  return Math.floor(Math.random() * (max - min + 1)) + min; if my minimun wasnt 0)
-};
+}
 
 const generate = document.querySelector(".CLICK");
 
-
 function magic() {
   const greatimage = document.querySelector(".randomimage");
-  const numbershaha = getRandomInt(0, artworks.length - 1) // index starts at 0 but .length counts items in the arry and we need index. if we didnt subtract one, the last index would comme as undefimed
+  const numbershaha = getRandomInt(0, artworks.length - 1); // index starts at 0 but .length counts items in the arry and we need index. if we didnt subtract one, the last index would comme as undefimed
   greatimage.src = artworks[numbershaha].picture; //.src for the url stuff and . picture bc its called picture in array (thingy ses it as object not image)
 }
 generate.addEventListener("click", magic);
@@ -171,11 +170,12 @@ document.getElementById("ihatecoding").addEventListener("submit", function (e) {
     title: document.getElementById("tital").value,
     picture: document.getElementById("image").value,
     description: document.getElementById("deez").value,
-    button:"more",
+    button: "more",
   };
   inject(newworks);
   document.getElementById("ihatecoding").reset(); //https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset
 });
+
 function inject(newworks) {
   gallery.insertAdjacentHTML(
     "afterbegin",
@@ -191,5 +191,3 @@ src="${newworks.picture}"
     </div>`
   );
 }
-//add flex box to imagedes for exapnsion overlapping
-//put in to app f
